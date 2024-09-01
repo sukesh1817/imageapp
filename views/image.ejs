@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your image</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <title>Image</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -54,6 +53,9 @@
         img {
             width: 100%;
             height: auto;
+            max-height: 80vh;
+            border-radius: 10px;
+            /* Adjust this value to reduce the height */
             aspect-ratio: 1 / 1;
             object-fit: cover;
             transition: transform 1000ms;
@@ -126,6 +128,63 @@
                 transform: scale(1.2);
             }
         }
+
+        /* From Uiverse.io by nikk7007 */
+        .button {
+            --color: #42b883;
+            padding: 0.8em 1.7em;
+            background-color: transparent;
+            border-radius: .3em;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: .5s;
+            font-weight: 400;
+            font-size: 17px;
+            border: 1px solid;
+            font-family: inherit;
+            color: #42b883;
+            z-index: 1;
+            text-decoration: none;
+        }
+
+        .button::before,
+        .button::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 50px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            border-radius: 50%;
+            z-index: -1;
+            background-color: var(--color);
+            transition: 1s ease;
+        }
+
+        .button::before {
+            top: -1em;
+            left: -1em;
+        }
+
+        .button::after {
+            left: calc(100% + 1em);
+            top: calc(100% + 1em);
+        }
+
+        .button:hover::before,
+        .button:hover::after {
+            height: 410px;
+            width: 410px;
+        }
+
+        .button:hover {
+            color: rgb(10, 25, 30);
+        }
+
+        .button:active {
+            filter: brightness(.8);
+        }
     </style>
 </head>
 
@@ -133,6 +192,8 @@
     <ul>
         <li>
             <a>
+                <button style="margin-bottom: 5px;margin-left: 5px;" onclick="window.location.href='../'" class="button">Go back
+                </button>
                 <figure>
                     <img src='<%-url%>' alt='Volcano and lava field against a stormy sky'>
                     <figcaption><%-query%></figcaption>
