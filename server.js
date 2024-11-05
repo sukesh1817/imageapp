@@ -6,7 +6,7 @@ const { Readable } = require("stream");
 const path = require('path');
 const process = require('process');
 
-const DEEPINFRA_API_KEY = "e7sy9bXI1NUG48UOCECmh4VNiaVQptGV";
+const DEEPINFRA_API_KEY = "5y7xLXuvtrUNP9Vg92XwTCzVKJO0dIkT";
 const MODEL = "black-forest-labs/FLUX-1-schnell";
 var text = "";
 
